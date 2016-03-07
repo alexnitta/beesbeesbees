@@ -3,11 +3,6 @@ var Bee = function() {
   // call the Grub superclass
   Grub.call(this);
 
-  // set the prototype
-  Object.setPrototypeOf(this, Grub.prototype);
-  // set the constructor
-  // this.constructor = Grub;
-  
   // an age property that is set to 5
   this.age = 5;
   
@@ -21,3 +16,9 @@ var Bee = function() {
   this.job = 'keep on growing';
 };
 
+// set the prototype
+  // set Bee.prototype to a new object created from Grub.prototype
+Bee.prototype = Object.create(Grub.prototype);
+
+// set the constructor
+Bee.prototype.constructor = Bee;
